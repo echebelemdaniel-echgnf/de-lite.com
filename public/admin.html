@@ -1,0 +1,13 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Admin | DE-Elite</title><link rel="stylesheet" href="styles.css">
+<style>.bar{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin:18px 0}.bar select{width:auto}.meta{color:var(--mut);font-size:14px}.acts{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:14px}.acts .btn{padding:8px 16px;font-size:15px}.tag{display:inline-block;padding:2px 10px;border-radius:99px;background:var(--gold);color:var(--navy);font-size:13px;font-weight:600}.acts .btn:not(.b1){border-color:var(--line)}.msg{white-space:pre-wrap;margin-top:8px}</style></head>
+<body><div class="wrap" style="max-width:860px;padding:34px 20px">
+<h1 style="font-size:44px">DE-Elite quote requests</h1>
+<form id="lg" hidden style="max-width:380px;margin-top:20px"><label>Admin password<input id="pw" type="password" autocomplete="current-password" required></label><div class="err" id="le" role="alert"></div><button class="btn b1" style="justify-content:center">Sign in</button></form>
+<div id="app" hidden><div class="acts" style="margin:0 0 6px"><button class="btn b1" id="t1">Quote requests</button><button class="btn" id="t2">Job photos</button><a class="btn" href="/api/admin/quotes.csv">Export CSV</a></div><div id="qp"><div class="bar"><span class="meta" id="c"></span><span style="display:flex;gap:10px"><select id="f" aria-label="Filter"><option value="">All</option><option value="new">New</option><option value="contacted">Contacted</option><option value="done">Done</option></select><button class="btn" id="out" style="border-color:var(--line);padding:8px 16px">Sign out</button></span></div><div id="list"></div></div><div id="gp" hidden><form id="up" style="margin:18px 0"><h3 style="font-size:26px">Add a job photo</h3>
+<label>Photo (JPG, PNG or WebP, max 8 MB)<input id="ph" name="photo" type="file" accept="image/jpeg,image/png,image/webp" required></label>
+<div class="row"><label>Caption<input name="caption" maxlength="120" placeholder="e.g. Distribution board, Woji"></label>
+<label>Category<select name="category"><option>Electrical installation</option><option>Wiring</option><option>Solar &amp; inverter</option><option>CCTV</option><option>Cooling &amp; heating</option><option>Industrial</option></select></label></div>
+<div class="err" id="ue" role="alert"></div><button class="btn b1" style="justify-content:center">Upload photo</button></form><div class="grid" id="gl"></div></div>
+</div>
+</div><script src="admin.js"></script></body></html>

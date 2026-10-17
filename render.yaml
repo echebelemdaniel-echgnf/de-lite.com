@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: de-elite
+    runtime: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    disk: { name: data, mountPath: /var/data, sizeGB: 1 }
+    envVars:
+      - { key: NODE_ENV, value: production }
+      - { key: DATA_DIR, value: /var/data }
+      - { key: ADMIN_PASSWORD, sync: false }
+      - { key: SESSION_SECRET, generateValue: true }
+      - { key: NOTIFY_EMAIL, value: boningosam50@gmail.com }
+      - { key: ALLOWED_ORIGIN, sync: false }
